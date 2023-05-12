@@ -1,0 +1,412 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>第一节 Storyboard的基本概念与基本命令 | RiceSS的小窝</title><meta name="author" content="RiceSS"><meta name="copyright" content="RiceSS"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Storyboard简介Storyboard（下面简称SB）是附加在osu!谱面中的一些装饰性的动画背景(animated background)。近几年osu社区带有故事板的谱面逐渐变多，也变得更加复杂。  在实际制作SB之前，我们可以先欣赏一些SB，来领略一下SB带给游玩的极致体验。 TODO:::: 很多谱面在经过SB的点缀之后，游玩体验会大幅度提升。 但是即使在这样的环境之下，我依然没有找">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一节 Storyboard的基本概念与基本命令">
+<meta property="og:url" content="https://speechless-10308.github.io/2023/03/09/Lec1/index.html">
+<meta property="og:site_name" content="RiceSS的小窝">
+<meta property="og:description" content="Storyboard简介Storyboard（下面简称SB）是附加在osu!谱面中的一些装饰性的动画背景(animated background)。近几年osu社区带有故事板的谱面逐渐变多，也变得更加复杂。  在实际制作SB之前，我们可以先欣赏一些SB，来领略一下SB带给游玩的极致体验。 TODO:::: 很多谱面在经过SB的点缀之后，游玩体验会大幅度提升。 但是即使在这样的环境之下，我依然没有找">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a.ppy.sh/8271436?1665158620.jpeg">
+<meta property="article:published_time" content="2023-03-09T03:07:28.674Z">
+<meta property="article:modified_time" content="2023-05-12T10:09:22.869Z">
+<meta property="article:author" content="RiceSS">
+<meta property="article:tag" content="osu! storyboard RiceSS ScatteredFaith">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a.ppy.sh/8271436?1665158620.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://speechless-10308.github.io/2023/03/09/Lec1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第一节 Storyboard的基本概念与基本命令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-12 18:09:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://a.ppy.sh/8271436?1665158620.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="RiceSS的小窝"><img class="site-icon" src="https://a.ppy.sh/8271436?1665158620.jpeg"/><span class="site-name">RiceSS的小窝</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第一节 Storyboard的基本概念与基本命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-09T03:07:28.674Z" title="发表于 2023-03-09 11:07:28">2023-03-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-12T10:09:22.869Z" title="更新于 2023-05-12 18:09:22">2023-05-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Storybrew%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">Storybrew入门教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="第一节 Storyboard的基本概念与基本命令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="Storyboard简介"><a href="#Storyboard简介" class="headerlink" title="Storyboard简介"></a>Storyboard简介</h2><p>Storyboard（下面简称SB）是附加在<a target="_blank" rel="noopener" href="https://osu.ppy.sh/home">osu!</a>谱面中的一些装饰性的动画背景(animated background)。近几年osu社区带有故事板的谱面逐渐变多，也变得更加复杂。</p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9ymSM9.png" alt="p9ymSM9.png" title="文章发布时带有Storyboard的谱面"></p>
+<p>在实际制作SB之前，我们可以先欣赏一些SB，来领略一下SB带给游玩的极致体验。</p>
+<p>TODO::::</p>
+<p>很多谱面在经过SB的点缀之后，游玩体验会大幅度提升。</p>
+<p>但是即使在这样的环境之下，我依然没有找到很多较为优质的中文SB教程。毕竟这个东西很多情况下都是<strong>吃力不讨好的工作</strong>（甚至其实做SB很多时候也是无偿以及用爱发电），为了让从未接触过编程的一般路过osu!玩家也能短时间内制作出一个像模像样的SB，这个教程便诞生了。</p>
+<p>制作SB的方法有以下这两类：</p>
+<ol>
+<li>使用osu!自带的<a target="_blank" rel="noopener" href="https://osu.ppy.sh/wiki/zh/Client/Beatmap_editor/Design">Design</a>界面来直接制作SB，所见即所得。</li>
+<li>使用各种编程语言来制作SB，例如Python、C#以及基于C#开发的专门用于SB制作的Storybrew（这也将是这个教程的<strong>重点</strong>）。</li>
+</ol>
+<h2 id="Storyboard基本术语"><a href="#Storyboard基本术语" class="headerlink" title="Storyboard基本术语"></a>Storyboard基本术语</h2><blockquote>
+<p>提前声明：这一节的内容可以说是及其无聊且枯燥的，因为所有的东西都只是一些概念，看完这节之后你可能仍然不知道如何去下手制作一个SB，但是这一节的基础知识也是极为重要的，只有掌握这些基础知识才能规范地制作出精美的SB。</p>
+</blockquote>
+<p>在制作一个优秀的SB之前，有必要对SB的一些基本属于进行必要的解释。这些术语会在之后的文章及其内容中反复出现，因此有必要专门分出一节来做一些定义。以下这些内容部分来自osu!官方<a target="_blank" rel="noopener" href="https://osu.ppy.sh/wiki/zh/Storyboard/Scripting/General_Rules">wiki</a>，我做了一部分翻译工作，也加入了一些自己的解释。这一部分不会涉及到很复杂的概念，例如SB Load以及场景大小等，这些复杂概念将在之后进行解释。</p>
+<h3 id="对象（Objects）"><a href="#对象（Objects）" class="headerlink" title="对象（Objects）"></a>对象（Objects）</h3><p>引用osu!的<a target="_blank" rel="noopener" href="https://osu.ppy.sh/wiki/zh/Storyboard/Scripting/Objects">官方定义</a>：</p>
+<blockquote>
+<p>In Storyboarding, Objects are sprites or animations that appear on the screen and make up the storyboard. Instances of SB-specific audio can also be considered to be objects; however, for clarity, they have their own section of this guide.</p>
+</blockquote>
+<p>也就是说，对象包含精灵以及动画，精灵（Sprite）这一概念来源已久，往前追溯可以追到<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/43546104">红白机时代</a>。</p>
+<p>在SB中，对象就是组成SB的元素，可以是声音（audio samples），也可以是图片（images），我们这里先假定对象都是图片，基于声音的对象在本基础教程中不会涉及。在osu!中支持下面两种格式的图片：</p>
+<ul>
+<li><code>.Jpeg</code>：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/JPEG">这一类图片</a>通常是有损的，并且没有透明通道，换言之，这种图片没有透明的背景。因此<code>.Jpeg</code>比较适合用来当背景。</li>
+<li><code>.png</code>：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/PNG">这一类图片</a>支持透明通道，在SB中一些前景的对象以及文字都是以这种格式被osu!读取的。</li>
+</ul>
+<p>我们可以为对象添加各种各样的<a href="#%E5%91%BD%E4%BB%A4command">命令</a>来决定对象各种各样的属性。正是因为有了各式各样的命令才使得osu!的SB栩栩如生。</p>
+<h3 id="层（Layers）"><a href="#层（Layers）" class="headerlink" title="层（Layers）"></a>层（Layers）</h3><p>层是为了处理各个对象之间的遮挡关系所产生的。不同层之间的互相遮挡构成了一个复杂且精致的SB。下图清晰的展示了不同层是如何之间如何相互作用的。</p>
+<img src="https://s1.ax1x.com/2023/05/12/p9yrW2F.png" width="50%" height="50%" align=centre />
+
+<p>osu!本身提供了5个层为我们放置各种各样的<a href="#%E5%AF%B9%E8%B1%A1objects">对象</a>。这5个层依据与note的上下位置关系以及他们本身的上下关系从下到上分别为：</p>
+<ul>
+<li>被note遮挡的层<ul>
+<li>背景（Backgroud）</li>
+<li>失败（Fail）：只有当玩家处于<a href="#%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81game-states">失败状态</a>这一层的对象才会出现。</li>
+<li>通过（Pass）：只有当玩家处于<a href="#%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81game-states">通过状态</a>这一层的对象才会出现。</li>
+<li>前景（Foreground）</li>
+</ul>
+</li>
+<li>遮挡note的层<ul>
+<li>Overlay：这一层会铺在note的上面，玩家会看不到游玩的note。</li>
+</ul>
+</li>
+</ul>
+<p>有几点值得注意的事项：</p>
+<ul>
+<li><code>失败</code>以及<code>通过</code>图层上的对象不会在游玩的时候同时出现</li>
+<li>如果你在做SB的时候把背景图（BG）去掉，那么背景图会在<strong>所有层</strong>的最下面显示。如果你不想要背景图在你做的SB中一直显示，可以通过一些技巧去掉。</li>
+<li>对象之间的遮挡关系如下：<ul>
+<li>后面层的对象会被前一层或前几层的对象所遮挡。举例来说，在<code>背景</code>层的对象会被在<code>失败</code>、<code>通过</code>、<code>前景</code>这三层的对象所遮挡。</li>
+<li>同一层的对象，依据在<code>.osb</code>文件中定义的先后顺序确定次序，先定义的对象将会被后定义的对象所遮挡。</li>
+<li>你可以在<code>.osu</code>中定义一些对象，这些对象的逻辑和在<code>.osb</code>中一致。同一层下，定义在<code>.osu</code>的对象将会被定义在<code>.osb</code>的对象所遮挡；不同层下，以层之间的遮挡关系来确定对象的遮挡关系。举一个例子，如果在<code>.osu</code>中定义了处于<code>背景</code>的对象A和处于<code>前景</code>的对象B，在<code>.osb</code>中定义了处于<code>背景</code>的对象C，那么对象C会挡住对象A，并且对象B会挡住对象C。具体原因就是osu!会先加载在<code>.osu</code>中的SB内容，再加载<code>.osb</code>中的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="坐标轴（axis）"><a href="#坐标轴（axis）" class="headerlink" title="坐标轴（axis）"></a>坐标轴（axis）</h3><p>正常情况下，如果你没有勾选在使用宽屏幕支持（Widescreen Support）时，osu!默认的屏幕大小为<code>640*480</code>。在勾选宽屏幕支持之后，osu!的屏幕大小为<code>854*480</code>。无论你的电脑分辨率是多少，窗口设置的是多少分辨率，这个基本的属性都不会变化。</p>
+ <img src="https://s1.ax1x.com/2023/05/12/p9yBiPU.png" width="50%" height="50%" alt="在点击“Song Setup”之后显示的窗口" align=center />
+
+<p>下面这张图表示osu!屏幕上各个区域的位置：<br><img src="https://s1.ax1x.com/2023/05/12/p9ys7Lj.jpg" alt="坐标轴的示意图"></p>
+<p>坐标轴是从左上角为原点的，其中，整个屏幕的中心点是<code>(320，240)</code>。为了支持老版本SB，对于开启宽屏的情形，osu!设定坐标区域是<code>x: -107 - 747, y: 0 - 480</code>，不开启宽屏情形，osu!设定坐标区域是<code>x: 0 - 640, y: 0 - 480</code>。</p>
+<p>特别地，对于<code>osu!std</code>模式而言，可游玩的区域是<code>x: 60 - 570, y: 55 - 440</code>。</p>
+<h3 id="对象的声明与定义（Object-Declaration-and-Definition）"><a href="#对象的声明与定义（Object-Declaration-and-Definition）" class="headerlink" title="对象的声明与定义（Object Declaration and Definition）"></a>对象的声明与定义（Object Declaration and Definition）</h3><p>声明（Declaration）是一个编程中的基础概念。用通俗的话来讲，声明就是告诉程序，在SB中我们将会使用这一个对象。对象的声明可以说是让电脑做好准备，准备为这个对象划分一个私人区域让其随心所欲。</p>
+<p>声明之后要干的事情是什么呢？答案是定义（Definition）。定义是什么意思呢？回想在数学中，我们常常会给出一个概念的定义，有了这个定义之后，我们就可以了解这个概念具体所指代的内容。SB中的定义，或者说编程中的定义，起到了同样的功效。电脑现在已经做好了准备，为对象划分了一个区域供其自由使用了，但是这个对象现在是什么样子，还没有盖棺定论。因此，定义就是告诉电脑，这个对象长什么样子。在SB中，我们需要告诉电脑这个对象的类型（type）（它是一个精灵还是一个动画），我们还需要让电脑知道这个对象长什么样子（filepath）（需要给一个地址让电脑可以找到它并把它带到屏幕上），其次，既然osu!给了我们5个层（layer），我们也要告诉电脑这个对象它处于哪一层。这三个是最基本的属性，也是每一个对象所必须定义的属性。</p>
+<p>除此之外，还有一些更加详细的属性。</p>
+<h4 id="Origin"><a href="#Origin" class="headerlink" title="Origin"></a>Origin</h4><p>Origin在SB中可以理解成是锚点，在<code>.osb</code>中，其值和对应的锚点位置关系如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">值</th>
+<th align="center">Origin</th>
+<th align="center">值</th>
+<th align="center">Origin</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">TopLeft</td>
+<td align="center">5</td>
+<td align="center">TopCentre</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">Centre</td>
+<td align="center">6</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">CentreLeft</td>
+<td align="center">7</td>
+<td align="center">CentreRight</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">TopRight</td>
+<td align="center">8</td>
+<td align="center">BottomLeft</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">BottomCentre</td>
+<td align="center">9</td>
+<td align="center">BottomRight</td>
+</tr>
+</tbody></table>
+<p>这些参数是什么意思呢？先看下面这张图：</p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9yc1Rf.jpg" width="50%" height="50%" align="middle" />。</p>
+<p>图中各个点的位置表明了在一张图片上Origin所对应的位置，我们在定义一个对象的时候只能定义一次Origin这个属性。这个属性类似PS中的锚点功能，只不过所有的变换都只能基于这9个锚点进行变换，而没有其他可供选择的锚点。</p>
+<p>这一个参数有什么作用？</p>
+<ul>
+<li>在我们接下来想要定义对象的位置时，我们需要使用二元坐标，而我们指定的坐标就是这个锚点相对于<a href="#%E5%9D%90%E6%A0%87%E8%BD%B4axis">坐标轴</a>一节所指出的坐标系的坐标。具体来说，我们仍然拿上面那张图片来举例：同样是设定其坐标为<code>(0,0)</code>，在设置为<code>TopLeft</code>以及<code>Centre</code>参数下，对象在坐标轴的位置是不一样的。</li>
+</ul>
+<img src="https://s1.ax1x.com/2023/05/12/p9ygbcT.jpg" alt="不同的Origin会影响图片在SB中的位置" border="0" width="50%" align="middle"/>
+
+<ul>
+<li>在我们想要定义对象的各种形变时，不同的Origin也会产生不一样的影响。例如：同样是让图片缩小到原来的75%，不同的Origin产生的效果是不一样的。</li>
+</ul>
+<img src="https://s1.ax1x.com/2023/05/12/p9yRpZQ.jpg" alt="不同的Origin会影响图片在SB中的变换" border="0" width="50%" align="middle"/>
+
+<h4 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h4><p>正如我们在<a href="#origin">上一节</a>中所提到的那样，我们采用二元坐标$(x,y)$来定义一个对象的坐标。一般来说，如果不特殊说明，osu!会把坐标定在中心点位置，即$(320,240)$。</p>
+<h3 id="游戏状态（Game-States）"><a href="#游戏状态（Game-States）" class="headerlink" title="游戏状态（Game States）"></a>游戏状态（Game States）</h3><p>游戏状态是根据玩家表现所得出的一种状态，分为通过状态（Pass State）以及失败状态（Fail State）。<br>根据不同的时间段，区分通过状态和失败状态的准则是不一样的：</p>
+<ul>
+<li>Drain Time开始前（可以认为是第一个Note出现之前）<ul>
+<li>始终是通过状态。此时只会显示在<code>通过</code>图层的对象。</li>
+</ul>
+</li>
+<li>游玩期间（也就是两个Break Time的间隔）<ul>
+<li>在<code>osu!std</code>中，如果玩家在上一个颜色的Combo下全部获得了300，则为通过状态，否则为失败状态。</li>
+<li>在<code>osu!taiko</code>中，如果玩家Miss了最后一个Note则为<code>失败</code>状态，否则为<code>通过</code>状态。（存疑，这里官方wiki的解释并不是很清楚）</li>
+<li>在<code>osu!ctb</code>中，会延续上一个Break Time时候的状态，第一个可游玩的区域是<code>通过</code>状态。例如，第一个Break Time时玩家获得了<code>通过</code>状态，那么截止到下一个Break Time之前玩家一直是<code>通过</code>状态，直到下一个Break Time的时候才会更改游戏状态。</li>
+<li>在<code>osu!mania</code>中，只要玩家断连，即为<code>失败</code>状态，否则就是<code>通过</code>状态。</li>
+</ul>
+</li>
+<li>Break Time期间<ul>
+<li>在除了<code>osu!taiko</code>模式外的其他模式，如果玩家在上一个可游玩区域结束的时候血量（HP）在一半以上，则为<code>通过</code>状态。否则，就是失败状态。</li>
+<li><code>osu!taiko</code>待补充。</li>
+</ul>
+</li>
+<li>最后一个note播放完毕<ul>
+<li>如果没有Break Time<ul>
+<li>和Break Time判断标准类似</li>
+</ul>
+</li>
+<li>如果有至少一个Break Time<ul>
+<li>至少有一半的Break Time玩家得到了<code>通过</code>状态，那么最后得到<code>通过</code>状态。否则得到<code>失败</code>状态。具体的应用可以看<a target="_blank" rel="noopener" href="https://osu.ppy.sh/beatmapsets/1124097#osu/2348896">这张图</a>的SB。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="缓动函数"><a href="#缓动函数" class="headerlink" title="缓动函数"></a>缓动函数</h3><p>TODO。。。。</p>
+<h3 id="命令（Command）"><a href="#命令（Command）" class="headerlink" title="命令（Command）"></a>命令（Command）</h3><p>在本节中，将涉及有关对象的相关命令。命令（Command）目的是告诉对象在某一个特定的<strong>时间点</strong>应该<strong>做什么事</strong>，从而对一个对象实现精确的控制。</p>
+<p>在<a href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89object-declaration-and-definition">对象的声明与定义</a>一节中，我们给定了一些对象的基本属性，事实上，定义对象的过程中我们就相当于已经在给对象施加各种各样的命令了。在osu!中，我们可以通过命令更改对象的位置&#x2F;大小&#x2F;颜色&#x2F;透明度&#x2F;是否可叠加等很多属性。</p>
+<h4 id="TODO-简单的介绍各种命令的用法"><a href="#TODO-简单的介绍各种命令的用法" class="headerlink" title="TODO:简单的介绍各种命令的用法"></a>TODO:简单的介绍各种命令的用法</h4><h2 id="Design界面的劣势"><a href="#Design界面的劣势" class="headerlink" title="Design界面的劣势"></a>Design界面的劣势</h2><p>在一开始的时候，我们说制作SB可以通过在Design界面中直接拖放来实现。但是现在很少有人只用Design来设计SB了，尽管osu!自带的Design界面可以提供一个类似PowerPoint一样的实时可操作可视化界面用于SB的制作，但是以下几点原因决定了在Design界面制作SB的低上限：</p>
+<ul>
+<li>尽管Design界面是一个较为直观的SB编写界面，但是很遗憾的是Design对于批量处理一些带有重复操作的对象的时候较为麻烦。</li>
+<li>不支持<a target="_blank" rel="noopener" href="https://osu.ppy.sh/wiki/zh/Storyboard/Scripting/Compound_Commands">循环（Loop）</a>以及<a target="_blank" rel="noopener" href="https://osu.ppy.sh/wiki/zh/Storyboard/Scripting/Compound_Commands">触发（Trigger）</a>。这两种概念会在之后的教程中涉及，简言之，循环就是让对象<strong>不停重复一些动作</strong>，而触发指的就是对象<strong>只有在满足某些条件的时候才会执行动作</strong>。</li>
+<li>有一些命令以及<a target="_blank" rel="noopener" href="https://easings.net/zh-cn">缓动函数</a>是不可以在Design界面调用的。</li>
+<li>使用Design界面制作的SB生成的<code>.osb</code>较为冗杂，会有一些不必要的命令。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://speechless-10308.github.io">RiceSS</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://speechless-10308.github.io/2023/03/09/Lec1/">https://speechless-10308.github.io/2023/03/09/Lec1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://speechless-10308.github.io" target="_blank">RiceSS的小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://a.ppy.sh/8271436?1665158620.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://a.ppy.sh/8271436?1665158620.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">RiceSS</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Storyboard%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">Storyboard简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Storyboard%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="toc-number">2.</span> <span class="toc-text">Storyboard基本术语</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%EF%BC%88Objects%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">对象（Objects）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%EF%BC%88Layers%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">层（Layers）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E8%BD%B4%EF%BC%88axis%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">坐标轴（axis）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89%EF%BC%88Object-Declaration-and-Definition%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">对象的声明与定义（Object Declaration and Definition）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Origin"><span class="toc-number">2.4.1.</span> <span class="toc-text">Origin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE"><span class="toc-number">2.4.2.</span> <span class="toc-text">位置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E7%8A%B6%E6%80%81%EF%BC%88Game-States%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">游戏状态（Game States）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%8A%A8%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.</span> <span class="toc-text">缓动函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%EF%BC%88Command%EF%BC%89"><span class="toc-number">2.7.</span> <span class="toc-text">命令（Command）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TODO-%E7%AE%80%E5%8D%95%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%90%84%E7%A7%8D%E5%91%BD%E4%BB%A4%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-number">2.7.1.</span> <span class="toc-text">TODO:简单的介绍各种命令的用法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design%E7%95%8C%E9%9D%A2%E7%9A%84%E5%8A%A3%E5%8A%BF"><span class="toc-number">3.</span> <span class="toc-text">Design界面的劣势</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/09/Lec1/" title="第一节 Storyboard的基本概念与基本命令">第一节 Storyboard的基本概念与基本命令</a><time datetime="2023-03-09T03:07:28.674Z" title="发表于 2023-03-09 11:07:28">2023-03-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By RiceSS</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>function loadGiscus () {
+  let nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+
+  const config = Object.assign({
+    src: 'https://giscus.app/client.js',
+    'data-repo': 'Speechless-10308/Speechless-10308.github.io',
+    'data-repo-id': 'R_kgDOJHNTmg',
+    'data-category-id': 'DIC_kwDOJHNTms4CWcJk',
+    'data-mapping': 'pathname',
+    'data-theme': nowTheme,
+    'data-reactions-enabled': '1',
+    crossorigin: 'anonymous',
+    async: true
+  },null)
+
+  let ele = document.createElement('script')
+  for (let key in config) {
+    ele.setAttribute(key, config[key])
+  }
+  document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin',ele)
+}
+
+function changeGiscusTheme () {
+  const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+
+  function sendMessage(message) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+
+  sendMessage({
+    setConfig: {
+      theme: theme
+    }
+  });
+}
+
+if ('Giscus' === 'Giscus' || !true) {
+  if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+  else loadGiscus()
+} else {
+  function loadOtherComment () {
+    loadGiscus()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
