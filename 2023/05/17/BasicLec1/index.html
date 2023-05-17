@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>第一节 使用Design制作第一个Storyboard | RiceSS的小窝</title><meta name="author" content="RiceSS"><meta name="copyright" content="RiceSS"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Storyboard（下面简称SB）是附加在osu!谱面中的一些装饰性的动画背景(animated background)。近几年osu社区带有故事板的谱面逐渐变多，也变得更加复杂。  在实际制作SB之前，我们可以先欣赏一些SB，来领略一下SB带给游玩的极致体验。 TODO:::: 很多谱面在经过SB的点缀之后，游玩体验会大幅度提升。 是不是已经心动了？那么接下来就让我们开始制作自己的第一款SB吧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一节 使用Design制作第一个Storyboard">
+<meta property="og:url" content="https://speechless-10308.github.io/2023/05/17/BasicLec1/index.html">
+<meta property="og:site_name" content="RiceSS的小窝">
+<meta property="og:description" content="Storyboard（下面简称SB）是附加在osu!谱面中的一些装饰性的动画背景(animated background)。近几年osu社区带有故事板的谱面逐渐变多，也变得更加复杂。  在实际制作SB之前，我们可以先欣赏一些SB，来领略一下SB带给游玩的极致体验。 TODO:::: 很多谱面在经过SB的点缀之后，游玩体验会大幅度提升。 是不是已经心动了？那么接下来就让我们开始制作自己的第一款SB吧">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://a.ppy.sh/8271436?1665158620.jpeg">
+<meta property="article:published_time" content="2023-05-17T06:23:05.000Z">
+<meta property="article:modified_time" content="2023-05-17T11:29:29.142Z">
+<meta property="article:author" content="RiceSS">
+<meta property="article:tag" content="osu! storyboard RiceSS ScatteredFaith">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a.ppy.sh/8271436?1665158620.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://speechless-10308.github.io/2023/05/17/BasicLec1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第一节 使用Design制作第一个Storyboard',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-17 19:29:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://a.ppy.sh/8271436?1665158620.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog-info"><a href="/" title="RiceSS的小窝"><img class="site-icon" src="https://a.ppy.sh/8271436?1665158620.jpeg"/><span class="site-name">RiceSS的小窝</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第一节 使用Design制作第一个Storyboard</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-17T06:23:05.000Z" title="发表于 2023-05-17 14:23:05">2023-05-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-17T11:29:29.142Z" title="更新于 2023-05-17 19:29:29">2023-05-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Storybrew%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">Storybrew入门教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="第一节 使用Design制作第一个Storyboard"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Storyboard（下面简称SB）是附加在<a target="_blank" rel="noopener" href="https://osu.ppy.sh/home">osu!</a>谱面中的一些装饰性的动画背景(animated background)。近几年osu社区带有故事板的谱面逐渐变多，也变得更加复杂。</p>
+<p><img src="https://s1.ax1x.com/2023/05/12/p9ymSM9.png" alt="p9ymSM9.png" title="文章发布时带有Storyboard的谱面"></p>
+<p>在实际制作SB之前，我们可以先欣赏一些SB，来领略一下SB带给游玩的极致体验。</p>
+<p>TODO::::</p>
+<p>很多谱面在经过SB的点缀之后，游玩体验会大幅度提升。</p>
+<p>是不是已经心动了？那么接下来就让我们开始制作自己的第一款SB吧！在看完本节内容之后，你将学会以下内容</p>
+<p>TODO::::</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在进行制作之前，首先需要明确一下本次教程将会用到的地图。本次教程，我们将尝试为<a target="_blank" rel="noopener" href="https://osu.ppy.sh/beatmapsets/1759729#mania/3601629">Zan’ei</a>写一个Storyboard。</p>
+<p>首先点击<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/11ooJ_UEAMKGt8gDw6WdjeQ?pwd=gftb">链接</a>下载需要准备的文件，这里的压缩包内除了常规的谱面文件还有我们在接下来将会使用到的一些素材。先让我们概览一下这些文件：</p>
+<p><img src="https://s1.ax1x.com/2023/05/17/p9W3cJe.png"></p>
+<p>在压缩包内有一些图片(<code>.jpg</code>和<code>.png</code>格式的图片)，这些图片将是我们接下来的教程所要使用的全部图像元素。其次还有一个<code>.srt</code>文件，这个文件存储的是残影这首歌的歌词。最后还可以看到一个<code>.osb</code>文件，这个文件就是SB的主体，里面存放了各种各样的代码，这一节中，我们不会介绍如何使用<code>.srt</code>以及编辑<code>.osb</code>文件，仅使用图片就可以制作一个简单的SB。</p>
+<p>在正式开始之前，让我们先做好准备工作。一般来说，制作一个SB完整的流程是：</p>
+<ul>
+<li>准备好素材文件</li>
+<li>将素材整理好放入谱面文件夹</li>
+<li>使用各种工具开始SB的制作</li>
+<li>检查、优化SB</li>
+</ul>
+<p>在这一节中，或者说在本教程中，我们都不需要你提前准备素材，只需要下载之前压缩包内的文件即可。所以我们的第一步相当于已经做好了。</p>
+<p>接下来，我们需要将我们的素材放到谱面文件夹。找到谱面所在的文件夹（为了整体的方便起见，我将谱面中所有的HitSound全部删除了），在其中新建一个”sb”的文件夹，然后将所有<strong>图片</strong>素材全部复制到该文件夹。在全部导入之后，你的文件夹结构应该和下面两张图一致：</p>
+<p><img src="https://s1.ax1x.com/2023/05/17/p9W8tTf.png" alt="根目录"><img src="https://s1.ax1x.com/2023/05/17/p9W8dfg.png" alt="sb文件夹"></p>
+<p>之后让我们返回osu!，右键选择谱面，进入谱面编辑器。之后点击Design这个按钮，你应该会看到这样一个界面：</p>
+<p><img src="https://s1.ax1x.com/2023/05/17/p9W8c7V.png"></p>
+<p>这就是Design界面，本节教程的所有操作几乎都会在这里开始。</p>
+<h2 id="隐藏背景"><a href="#隐藏背景" class="headerlink" title="隐藏背景"></a>隐藏背景</h2><p>首先映入眼帘的就是かぐや姫的BG（虽然你可能脑中已经开始想象那一段pp jump了）。在我们制作SB的时候，通常不希望BG在玩家一打开谱面就显示，而且希望它可以进行各种动画，因此有必要在一开始就将谱面的原BG隐藏。</p>
+<p>隐藏原BG需要用到编程的知识，这里我们先暂时跳过，具体是如何实现BG的隐藏，将在进阶以及高阶教程中进行详细的介绍，这里就不过多赘述了。要隐藏BG，你现在需要做的只有一件事：把压缩包的<code>.osb</code>文件放到谱面文件夹。</p>
+<p>在放进去之后，你的谱面文件夹现在长这样：<br><img src="https://s1.ax1x.com/2023/05/17/p9WGIPS.png" alt="谱面文件夹"></p>
+<p>现在退出谱面编辑器重新进入，你就可以看到BG已经隐藏掉了！</p>
+<p><img src="https://s1.ax1x.com/2023/05/17/p9WGjaV.png" alt="BG已经隐藏掉了"></p>
+<blockquote>
+<p>如果你要制作自己新的SB，想要隐藏BG，可以查看本节的最后一节补充内容，其中只需涉及少量的文本编辑即可实现BG的隐藏。</p>
+</blockquote>
+<h2 id="制作我们的第一个效果"><a href="#制作我们的第一个效果" class="headerlink" title="制作我们的第一个效果"></a>制作我们的第一个效果</h2><p>现在终于可以开始制作SB了！首先你不必认识Design界面的所有按钮都有什么意思，只需要按照本教程的步骤一步一步来，你会逐渐理解这些按钮的作用。如果你需要一个系统的解释，除了查阅osu!官方的<a target="_blank" rel="noopener" href="https://osu.ppy.sh/wiki/zh/Client/Beatmap_editor/Design#%E5%85%A5%E9%97%A8">wiki</a>，也可以看看这节教程最后的补充内容。里面会详细地介绍Design界面的用处。</p>
+<blockquote>
+<p>在这一节过后，你将学会如何为SB添加图像元素（或者说为对象），同时将会接触到关键帧的概念，也将了解<code>缩放</code>以及<code>淡入淡出</code>命令。</p>
+</blockquote>
+<p>在设计SB的时候，一般歌曲的intro部分我们习惯让谱面的BG变得模糊，随着音乐的情感逐步变深，模糊的BG将变得清晰。接下来的教程我们将尝试实现和下面一样的效果。</p>
+<h3 id="第一个素材的导入"><a href="#第一个素材的导入" class="headerlink" title="第一个素材的导入"></a>第一个素材的导入</h3><p>无论如何，首先先导入一个素材到我们的SB中吧。仔细听听音乐，<code>00:02:652</code> 的时候，鼓点响起。我们也想在这个时候让我们的模糊背景出现。</p>
+<p>首先移动到<a href="osu://edit/00:02:652"><code>00:02:652</code></a>找到Design界面下面的Sprite Library，点一下，之后选择最后一张图片（也就是那张模糊的BG），然后就会发现这张图片出现了！</p>
+<p><img src="https://i2.lensdump.com/i/kHYo7v.gif"></p>
+<p>还是很神奇的吧？这样这张模糊的图片便被我们添加了进来。</p>
+<h3 id="太大了，变小点！"><a href="#太大了，变小点！" class="headerlink" title="太大了，变小点！"></a>太大了，变小点！</h3><p>在上一小节我们已经成功导入了我们的素材。但是你有没有发现这个图片有点太大了。导致看起来怪怪的。这时候就要介绍对这些对象的各种命令，也就是左边这些变换之类的选项卡。</p>
+<p>在这一小节，我们将介绍<code>缩放</code>命令。</p>
+<p>现在将目光移到左边的变换栏。在左边的变换栏有一个缩放按钮，点一下，试着按住鼠标左键上下拖动，神奇的事情发生了。</p>
+<p><img src="https://i1.lensdump.com/i/kHoC5o.gif"></p>
+<p>当你往下拖的时候，图片缩小了；当你往上拖的时候，图片就会放大。现在让我们调整这张图片到一个合适的大小，比如：这个大小！</p>
+<p><img src="https://s1.ax1x.com/2023/05/17/p9WwukR.png"></p>
+<p>注意到这时候图片的上边框线和编辑区域外侧一层浅浅的上框线对应，下边框亦是如此。这个大小是一个比较讲究的大小。游玩时，缩放到这个程度的图片将会填满整个屏幕，是一个较为舒适的大小。</p>
+<blockquote>
+<p>如果你发现上下拖动无效，那么很有可能是你没有在这张图片的范围内进行拖动。这时候把鼠标指针移动到图片上，再进行拖动。</p>
+<p><img src="https://i3.lensdump.com/i/kHoM9Q.gif"></p>
+</blockquote>
+<h3 id="让图片动起来"><a href="#让图片动起来" class="headerlink" title="让图片动起来"></a>让图片动起来</h3><p>可能有一些好奇的人已经尝试拖动时间轴了，但是当你拖动时间轴时，你会发现我们的模糊BG瞬间就消失了。尝试播放SB，你甚至会发现在osu!中这张图片根本就没有出现！</p>
+<p>这是为什么呢？</p>
+<p>首先要明确一个概念，在SB中，只有当一个图片在一个<strong>时间段内</strong>有像上面一样的命令时，这张图片才会出现。否则，它就不会出现。那怎么让其在一段时间有命令呢？这样就需要了解一下关键帧的概念。</p>
+<p><img src="https://s1.ax1x.com/2023/05/17/p9WwWhq.png"></p>
+<p>你可能已经注意到了在编辑器的箭头位置有一个”关键帧控制”的字样。在了解关键帧之前，我们需要了解一下”帧”的概念。</p>
+<p>在我们观看视频的时候，视频其实并不是连续变化的，而是由一张张离散的图片所组成的。而这每一张图片都可以称为是一”帧”。”帧”里面不但记录了图片，还记录了这张图片应该在什么时候出现。那现在你可能明白了，我们之前把模糊的BG到如今SB里，一直都没有动过时间轴，也就是说，我们至今为止所有的操作都是在一”帧”内进行的。而一帧在osu!中可是非常短暂的，因此我们必然看不到这张图片。</p>
+<p>那怎么办呢？你可能会说，那我每一帧都导入这张图片，这样不就可以看到这张图了吗？ <del>你说的对，但是（x）</del> 这样做理论上是可行的，但是且不论这样及其耗费时间，还有一个很重要的原因就是，osu!中的时间轴可以看成是连续的。这种情况下，你是不可以做到在每一帧上都进行操作的！ <del>（用实变的思想来说，就是说单个点在连续的数轴上测度是0，而osu!的数轴也可以看成是一个不可数的集合，在这个集合上你不能进行离散的操作）</del> 想要让这张图片能够被看见，我们还需要其他的操作。</p>
+<p>那既然我们做不到在每一帧上进行操作，那我们可不可以告诉osu!这张图片在一部分时间点的大小，其余时间点上图片的大小都有osu!自己去”脑补”呢？答案是yes。这也就是关键帧的思想。关键帧就是告诉程序一个物体在某些时间点上大小位置等关键参数，至于在这些时间点之间的参数，就全部由程序去补全。</p>
+<p>试着滑动鼠标滚轮到下一个1&#x2F;1的位置，也就是<a href="osu://edit/00:02:985"><code>00:02:985</code></a>。点击关键帧控制旁边的加号，你会看到出现了一条红色的线。</p>
+<p><img src="https://i3.lensdump.com/i/kHoU3c.gif"></p>
+<blockquote>
+<p>一部分人可能发现自己点击加号并没有什么用。请确保你在进行这个操作的时候是选中这张图片的。</p>
+</blockquote>
+<p>这条红色的线可以理解成程序”脑补”的每一帧。现在再播放，你就会发现你的图片可以被看到了。如果你想要让其被看到的更持久一些，可以把关键帧设置到更后面的位置，这样就可以让图片显示的更久一些，当然，后面我们也会进行其他的操作让其显示的更久。</p>
+<p>对比上面对关键帧的介绍，你会发现我们仅仅只是添加了一个关键帧，却没有改变参数。现在试着按住图片再次上下拖动到一个与之前不一样的大小，播放SB，你可能可以看到这样的场景：</p>
+<p><img src="https://i3.lensdump.com/i/kHoGko.gif"></p>
+<p>不管怎么说，这张图片总算动起来了。值得注意的是，你可以看到在进行完上述操作之后，顶端的轴变成了这样：</p>
+<p><img src="https://s1.ax1x.com/2023/05/17/p9WBGod.png"></p>
+<p>你可以看到在红线的左右端点各有一条白色的线，并且左端点的白线在红线的上半部分，右端点的线在红线的下半部分。这分别代表着一个动作的开始与结束。在我们导入素材并点击<code>变换</code>按钮的时候，我们实际上就已经创建了一个关键帧，而之后我们在下一个1&#x2F;1的时间点又创建了一个关键帧，两个关键帧之间构成了一段区间，这也就是那条红色的线。可以试着在下一个1&#x2F;1也就是<a href="osu://edit/00:03:318"><code>00:03:318</code></a>点击加号再次创建一个关键帧，上下拖动鼠标更改图片大小。试着播放一下，也许你会有不一样的发现。</p>
+<h3 id="让图片不要粗暴地直接出现"><a href="#让图片不要粗暴地直接出现" class="headerlink" title="让图片不要粗暴地直接出现"></a>让图片不要粗暴地直接出现</h3><p>TODO::将介绍<code>淡入淡出</code>效果。</p>
+<h2 id="补充内容"><a href="#补充内容" class="headerlink" title="补充内容"></a>补充内容</h2><h3 id="开启宽屏支持"><a href="#开启宽屏支持" class="headerlink" title="开启宽屏支持"></a>开启宽屏支持</h3><p>首先，请先确保你开启了宽屏支持！点击Song Setup按钮，进入Design这个Tab，你就会看到这个窗口。把”Widescreen Support”勾选上。</p>
+<center>
+ <img src="https://s1.ax1x.com/2023/05/12/p9yBiPU.png" width="50%" height="50%" alt="在点击“Song Setup”之后显示的窗口" align=center />
+</center>
+
+<p>两者的区别见后面的教程（TODO::，后面会换成超链接）。这里我们可以简单对比一下开启宽屏支持和不开启的区别。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://speechless-10308.github.io">RiceSS</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://speechless-10308.github.io/2023/05/17/BasicLec1/">https://speechless-10308.github.io/2023/05/17/BasicLec1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://speechless-10308.github.io" target="_blank">RiceSS的小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://a.ppy.sh/8271436?1665158620.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/03/09/Lec1/" title="第一节 Storyboard的基本概念与基本命令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">第一节 Storyboard的基本概念与基本命令</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://a.ppy.sh/8271436?1665158620.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">RiceSS</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E8%83%8C%E6%99%AF"><span class="toc-number">2.</span> <span class="toc-text">隐藏背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E6%88%91%E4%BB%AC%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%95%88%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text">制作我们的第一个效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%B4%A0%E6%9D%90%E7%9A%84%E5%AF%BC%E5%85%A5"><span class="toc-number">3.1.</span> <span class="toc-text">第一个素材的导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%AA%E5%A4%A7%E4%BA%86%EF%BC%8C%E5%8F%98%E5%B0%8F%E7%82%B9%EF%BC%81"><span class="toc-number">3.2.</span> <span class="toc-text">太大了，变小点！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E5%9B%BE%E7%89%87%E5%8A%A8%E8%B5%B7%E6%9D%A5"><span class="toc-number">3.3.</span> <span class="toc-text">让图片动起来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A9%E5%9B%BE%E7%89%87%E4%B8%8D%E8%A6%81%E7%B2%97%E6%9A%B4%E5%9C%B0%E7%9B%B4%E6%8E%A5%E5%87%BA%E7%8E%B0"><span class="toc-number">3.4.</span> <span class="toc-text">让图片不要粗暴地直接出现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E5%86%85%E5%AE%B9"><span class="toc-number">4.</span> <span class="toc-text">补充内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E5%AE%BD%E5%B1%8F%E6%94%AF%E6%8C%81"><span class="toc-number">4.1.</span> <span class="toc-text">开启宽屏支持</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/17/BasicLec1/" title="第一节 使用Design制作第一个Storyboard">第一节 使用Design制作第一个Storyboard</a><time datetime="2023-05-17T06:23:05.000Z" title="发表于 2023-05-17 14:23:05">2023-05-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/09/Lec1/" title="第一节 Storyboard的基本概念与基本命令">第一节 Storyboard的基本概念与基本命令</a><time datetime="2023-03-09T03:07:28.674Z" title="发表于 2023-03-09 11:07:28">2023-03-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By RiceSS</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>function loadGiscus () {
+  let nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+
+  const config = Object.assign({
+    src: 'https://giscus.app/client.js',
+    'data-repo': 'Speechless-10308/Speechless-10308.github.io',
+    'data-repo-id': 'R_kgDOJHNTmg',
+    'data-category-id': 'DIC_kwDOJHNTms4CWcJk',
+    'data-mapping': 'pathname',
+    'data-theme': nowTheme,
+    'data-reactions-enabled': '1',
+    crossorigin: 'anonymous',
+    async: true
+  },null)
+
+  let ele = document.createElement('script')
+  for (let key in config) {
+    ele.setAttribute(key, config[key])
+  }
+  document.getElementById('giscus-wrap').insertAdjacentElement('afterbegin',ele)
+}
+
+function changeGiscusTheme () {
+  const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+
+  function sendMessage(message) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+
+  sendMessage({
+    setConfig: {
+      theme: theme
+    }
+  });
+}
+
+if ('Giscus' === 'Giscus' || !true) {
+  if (true) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+  else loadGiscus()
+} else {
+  function loadOtherComment () {
+    loadGiscus()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
